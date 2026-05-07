@@ -1,0 +1,1142 @@
+[
+  {
+    "id": "w_001",
+    "front": "항공사",
+    "mongolian": "агаарын тээврийн компани",
+    "english": "airline"
+  },
+  {
+    "id": "w_002",
+    "front": "비행기 안",
+    "mongolian": "онгоц дотор",
+    "english": "inside the airplane"
+  },
+  {
+    "id": "w_003",
+    "front": "기내식",
+    "mongolian": "нислэгийн хоол",
+    "english": "in-flight meal"
+  },
+  {
+    "id": "w_004",
+    "front": "맛을 살리다",
+    "mongolian": "амтыг сайжруулах, амтыг гаргах",
+    "english": "to bring out the taste"
+  },
+  {
+    "id": "w_005",
+    "front": "노력하다",
+    "mongolian": "хичээх, хүчин чармайлт гаргах",
+    "english": "to make an effort"
+  },
+  {
+    "id": "w_006",
+    "front": "먼저",
+    "mongolian": "эхлээд, юуны өмнө",
+    "english": "first"
+  },
+  {
+    "id": "w_007",
+    "front": "건조한",
+    "mongolian": "хуурай",
+    "english": "dry"
+  },
+  {
+    "id": "w_008",
+    "front": "기내 환경",
+    "mongolian": "онгоцны доторх орчин",
+    "english": "cabin environment"
+  },
+  {
+    "id": "w_009",
+    "front": "고려하다",
+    "mongolian": "харгалзан үзэх, бодолцох",
+    "english": "to consider"
+  },
+  {
+    "id": "w_010",
+    "front": "수분",
+    "mongolian": "чийг",
+    "english": "moisture"
+  },
+  {
+    "id": "w_011",
+    "front": "날아가다",
+    "mongolian": "алга болох, уурших",
+    "english": "to disappear / evaporate"
+  },
+  {
+    "id": "w_012",
+    "front": "포장",
+    "mongolian": "савлагаа",
+    "english": "packaging"
+  },
+  {
+    "id": "w_013",
+    "front": "신경을 쓰다",
+    "mongolian": "анхаарах",
+    "english": "to pay attention"
+  },
+  {
+    "id": "w_014",
+    "front": "고도",
+    "mongolian": "өндөр, өндөрлөг",
+    "english": "altitude"
+  },
+  {
+    "id": "w_015",
+    "front": "높아지다",
+    "mongolian": "өндөр болох",
+    "english": "to become higher"
+  },
+  {
+    "id": "w_016",
+    "front": "미각",
+    "mongolian": "амтлах мэдрэмж",
+    "english": "sense of taste"
+  },
+  {
+    "id": "w_017",
+    "front": "둔해지다",
+    "mongolian": "мэдрэмж муудах, сулрах",
+    "english": "to become dull"
+  },
+  {
+    "id": "w_018",
+    "front": "대비하다",
+    "mongolian": "бэлдэх, урьдчилан сэргийлэх",
+    "english": "to prepare for"
+  },
+  {
+    "id": "w_019",
+    "front": "일부러",
+    "mongolian": "зориуд",
+    "english": "intentionally"
+  },
+  {
+    "id": "w_020",
+    "front": "짜다",
+    "mongolian": "давстай байх",
+    "english": "to be salty"
+  },
+  {
+    "id": "w_021",
+    "front": "미리",
+    "mongolian": "урьдчилан",
+    "english": "in advance"
+  },
+  {
+    "id": "w_022",
+    "front": "조리하다",
+    "mongolian": "хоол хийх, болгох",
+    "english": "to cook"
+  },
+  {
+    "id": "w_023",
+    "front": "냉동하다",
+    "mongolian": "хөлдөөх",
+    "english": "to freeze"
+  },
+  {
+    "id": "w_024",
+    "front": "싣다",
+    "mongolian": "ачих",
+    "english": "to load"
+  },
+  {
+    "id": "w_025",
+    "front": "손님",
+    "mongolian": "зочин, зорчигч",
+    "english": "guest / passenger"
+  },
+  {
+    "id": "w_026",
+    "front": "내놓다",
+    "mongolian": "гаргаж өгөх",
+    "english": "to serve / present"
+  },
+  {
+    "id": "w_027",
+    "front": "직전",
+    "mongolian": "яг өмнө",
+    "english": "just before"
+  },
+  {
+    "id": "w_028",
+    "front": "데우다",
+    "mongolian": "халаах",
+    "english": "to heat up"
+  },
+  {
+    "id": "w_029",
+    "front": "요즘",
+    "mongolian": "сүүлийн үед",
+    "english": "these days"
+  },
+  {
+    "id": "w_030",
+    "front": "도시",
+    "mongolian": "хот",
+    "english": "city"
+  },
+  {
+    "id": "w_031",
+    "front": "벌",
+    "mongolian": "зөгий",
+    "english": "bee"
+  },
+  {
+    "id": "w_032",
+    "front": "수",
+    "mongolian": "тоо, хэмжээ",
+    "english": "number"
+  },
+  {
+    "id": "w_033",
+    "front": "증가하다",
+    "mongolian": "нэмэгдэх",
+    "english": "to increase"
+  },
+  {
+    "id": "w_034",
+    "front": "이로 인한",
+    "mongolian": "үүнээс шалтгаалсан",
+    "english": "caused by this"
+  },
+  {
+    "id": "w_035",
+    "front": "피해",
+    "mongolian": "хохирол",
+    "english": "damage"
+  },
+  {
+    "id": "w_036",
+    "front": "종종",
+    "mongolian": "үе үе, хааяа",
+    "english": "often / sometimes"
+  },
+  {
+    "id": "w_037",
+    "front": "발생하다",
+    "mongolian": "үүсэх, гарах",
+    "english": "to occur"
+  },
+  {
+    "id": "w_038",
+    "front": "연구팀",
+    "mongolian": "судалгааны баг",
+    "english": "research team"
+  },
+  {
+    "id": "w_039",
+    "front": "적합한 환경",
+    "mongolian": "тохиромжтой орчин",
+    "english": "suitable environment"
+  },
+  {
+    "id": "w_040",
+    "front": "원인",
+    "mongolian": "шалтгаан",
+    "english": "cause"
+  },
+  {
+    "id": "w_041",
+    "front": "밝히다",
+    "mongolian": "илчлэх, мэдэгдэх",
+    "english": "to reveal / state"
+  },
+  {
+    "id": "w_042",
+    "front": "생존",
+    "mongolian": "амьд үлдэх",
+    "english": "survival"
+  },
+  {
+    "id": "w_043",
+    "front": "도움이 되다",
+    "mongolian": "тус болох",
+    "english": "to be helpful"
+  },
+  {
+    "id": "w_044",
+    "front": "공원",
+    "mongolian": "цэцэрлэгт хүрээлэн",
+    "english": "park"
+  },
+  {
+    "id": "w_045",
+    "front": "다양한",
+    "mongolian": "олон төрлийн",
+    "english": "various"
+  },
+  {
+    "id": "w_046",
+    "front": "꽃",
+    "mongolian": "цэцэг",
+    "english": "flower"
+  },
+  {
+    "id": "w_047",
+    "front": "식물",
+    "mongolian": "ургамал",
+    "english": "plant"
+  },
+  {
+    "id": "w_048",
+    "front": "자라다",
+    "mongolian": "ургах",
+    "english": "to grow"
+  },
+  {
+    "id": "w_049",
+    "front": "풍부한",
+    "mongolian": "элбэг, баялаг",
+    "english": "abundant"
+  },
+  {
+    "id": "w_050",
+    "front": "먹이",
+    "mongolian": "хоол тэжээл",
+    "english": "food / feed"
+  },
+  {
+    "id": "w_051",
+    "front": "제공하다",
+    "mongolian": "хангах, өгөх",
+    "english": "to provide"
+  },
+  {
+    "id": "w_052",
+    "front": "농촌",
+    "mongolian": "хөдөө орон нутаг",
+    "english": "rural area"
+  },
+  {
+    "id": "w_053",
+    "front": "~에 비해",
+    "mongolian": "-тай харьцуулахад",
+    "english": "compared to"
+  },
+  {
+    "id": "w_054",
+    "front": "상대적으로",
+    "mongolian": "харьцангуй",
+    "english": "relatively"
+  },
+  {
+    "id": "w_055",
+    "front": "농약",
+    "mongolian": "тариалангийн хор, пестицид",
+    "english": "pesticide"
+  },
+  {
+    "id": "w_056",
+    "front": "사용",
+    "mongolian": "хэрэглээ",
+    "english": "use"
+  },
+  {
+    "id": "w_057",
+    "front": "적다",
+    "mongolian": "бага байх",
+    "english": "to be few / little"
+  },
+  {
+    "id": "w_058",
+    "front": "안전하다",
+    "mongolian": "аюулгүй байх",
+    "english": "to be safe"
+  },
+  {
+    "id": "w_059",
+    "front": "많아지다",
+    "mongolian": "ихсэх, олшрох",
+    "english": "to increase / become many"
+  },
+  {
+    "id": "w_060",
+    "front": "또 하나의 이유",
+    "mongolian": "бас нэг шалтгаан",
+    "english": "another reason"
+  },
+  {
+    "id": "w_061",
+    "front": "정부",
+    "mongolian": "засгийн газар",
+    "english": "government"
+  },
+  {
+    "id": "w_062",
+    "front": "휴가",
+    "mongolian": "амралт",
+    "english": "vacation"
+  },
+  {
+    "id": "w_063",
+    "front": "하루 더",
+    "mongolian": "нэг өдөр илүү",
+    "english": "one more day"
+  },
+  {
+    "id": "w_064",
+    "front": "캠페인을 벌이다",
+    "mongolian": "кампанит ажил өрнүүлэх",
+    "english": "to launch a campaign"
+  },
+  {
+    "id": "w_065",
+    "front": "국내 관광",
+    "mongolian": "дотоодын аялал жуулчлал",
+    "english": "domestic tourism"
+  },
+  {
+    "id": "w_066",
+    "front": "활성화",
+    "mongolian": "идэвхжүүлэлт",
+    "english": "revitalization"
+  },
+  {
+    "id": "w_067",
+    "front": "목적으로",
+    "mongolian": "зорилгоор",
+    "english": "for the purpose of"
+  },
+  {
+    "id": "w_068",
+    "front": "기업",
+    "mongolian": "компани",
+    "english": "company"
+  },
+  {
+    "id": "w_069",
+    "front": "근로자",
+    "mongolian": "ажилчин, хөдөлмөр эрхлэгч",
+    "english": "worker"
+  },
+  {
+    "id": "w_070",
+    "front": "참여",
+    "mongolian": "оролцоо",
+    "english": "participation"
+  },
+  {
+    "id": "w_071",
+    "front": "유도하다",
+    "mongolian": "чиглүүлэх, татан оролцуулах",
+    "english": "to induce / encourage"
+  },
+  {
+    "id": "w_072",
+    "front": "국민",
+    "mongolian": "иргэд, ард түмэн",
+    "english": "citizens / people"
+  },
+  {
+    "id": "w_073",
+    "front": "국내 휴가",
+    "mongolian": "эх орондоо өнгөрүүлэх амралт",
+    "english": "domestic vacation"
+  },
+  {
+    "id": "w_074",
+    "front": "일수",
+    "mongolian": "өдрийн тоо",
+    "english": "number of days"
+  },
+  {
+    "id": "w_075",
+    "front": "소비",
+    "mongolian": "хэрэглээ",
+    "english": "consumption"
+  },
+  {
+    "id": "w_076",
+    "front": "2조 5천억 원",
+    "mongolian": "2 их наяд 500 тэрбум вон",
+    "english": "2.5 trillion won"
+  },
+  {
+    "id": "w_077",
+    "front": "늘다",
+    "mongolian": "өсөх, нэмэгдэх",
+    "english": "to increase"
+  },
+  {
+    "id": "w_078",
+    "front": "경제",
+    "mongolian": "эдийн засаг",
+    "english": "economy"
+  },
+  {
+    "id": "w_079",
+    "front": "관광업계",
+    "mongolian": "аялал жуулчлалын салбар",
+    "english": "tourism industry"
+  },
+  {
+    "id": "w_080",
+    "front": "일자리",
+    "mongolian": "ажлын байр",
+    "english": "job"
+  },
+  {
+    "id": "w_081",
+    "front": "생기다",
+    "mongolian": "бий болох",
+    "english": "to be created / happen"
+  },
+  {
+    "id": "w_082",
+    "front": "예상되다",
+    "mongolian": "таамаглагдах",
+    "english": "to be expected"
+  },
+  {
+    "id": "w_083",
+    "front": "집중력",
+    "mongolian": "анхаарал төвлөрөл",
+    "english": "concentration"
+  },
+  {
+    "id": "w_084",
+    "front": "떨어지다",
+    "mongolian": "буурах, унах",
+    "english": "to fall / decrease"
+  },
+  {
+    "id": "w_085",
+    "front": "더운 여름철",
+    "mongolian": "халуун зуны улирал",
+    "english": "hot summer season"
+  },
+  {
+    "id": "w_086",
+    "front": "사기",
+    "mongolian": "урам зориг, ажлын эрч хүч",
+    "english": "morale"
+  },
+  {
+    "id": "w_087",
+    "front": "높이다",
+    "mongolian": "нэмэгдүүлэх, өсгөх",
+    "english": "to raise / improve"
+  },
+  {
+    "id": "w_088",
+    "front": "패션",
+    "mongolian": "загвар, хувцаслалт",
+    "english": "fashion"
+  },
+  {
+    "id": "w_089",
+    "front": "비즈니스",
+    "mongolian": "бизнес",
+    "english": "business"
+  },
+  {
+    "id": "w_090",
+    "front": "일부",
+    "mongolian": "нэг хэсэг",
+    "english": "part"
+  },
+  {
+    "id": "w_091",
+    "front": "누군가",
+    "mongolian": "хэн нэгэн",
+    "english": "someone"
+  },
+  {
+    "id": "w_092",
+    "front": "만나다",
+    "mongolian": "уулзах",
+    "english": "to meet"
+  },
+  {
+    "id": "w_093",
+    "front": "상황",
+    "mongolian": "нөхцөл байдал",
+    "english": "situation"
+  },
+  {
+    "id": "w_094",
+    "front": "~에 따라",
+    "mongolian": "-аас шалтгаалан, -д тохируулан",
+    "english": "depending on"
+  },
+  {
+    "id": "w_095",
+    "front": "입고 나가다",
+    "mongolian": "өмсөөд гарах",
+    "english": "to wear and go out"
+  },
+  {
+    "id": "w_096",
+    "front": "옷",
+    "mongolian": "хувцас",
+    "english": "clothes"
+  },
+  {
+    "id": "w_097",
+    "front": "색상",
+    "mongolian": "өнгө",
+    "english": "color"
+  },
+  {
+    "id": "w_098",
+    "front": "디자인",
+    "mongolian": "загвар, дизайн",
+    "english": "design"
+  },
+  {
+    "id": "w_099",
+    "front": "소재",
+    "mongolian": "материал",
+    "english": "material"
+  },
+  {
+    "id": "w_100",
+    "front": "전략적으로",
+    "mongolian": "стратегитайгаар",
+    "english": "strategically"
+  },
+  {
+    "id": "w_101",
+    "front": "이미지",
+    "mongolian": "дүр төрх, имиж",
+    "english": "image"
+  },
+  {
+    "id": "w_102",
+    "front": "연출하다",
+    "mongolian": "бүрдүүлэх, харуулах",
+    "english": "to create / present"
+  },
+  {
+    "id": "w_103",
+    "front": "중요하다",
+    "mongolian": "чухал",
+    "english": "to be important"
+  },
+  {
+    "id": "w_104",
+    "front": "강한 의지",
+    "mongolian": "хүчтэй хүсэл зориг",
+    "english": "strong will"
+  },
+  {
+    "id": "w_105",
+    "front": "표명하다",
+    "mongolian": "илэрхийлэх, мэдэгдэх",
+    "english": "to express / state"
+  },
+  {
+    "id": "w_106",
+    "front": "빳빳한",
+    "mongolian": "хатуу, хэлбэрээ барьсан",
+    "english": "stiff"
+  },
+  {
+    "id": "w_107",
+    "front": "무채색",
+    "mongolian": "хар, цагаан, саарал зэрэг өнгөгүй өнгө",
+    "english": "achromatic color"
+  },
+  {
+    "id": "w_108",
+    "front": "선택하다",
+    "mongolian": "сонгох",
+    "english": "to choose"
+  },
+  {
+    "id": "w_109",
+    "front": "바람직하다",
+    "mongolian": "зохистой, тохиромжтой",
+    "english": "desirable / appropriate"
+  },
+  {
+    "id": "w_110",
+    "front": "반면에",
+    "mongolian": "харин эсрэгээрээ",
+    "english": "on the other hand"
+  },
+  {
+    "id": "w_111",
+    "front": "상대 회사",
+    "mongolian": "нөгөө компани, эсрэг талын компани",
+    "english": "the other company"
+  },
+  {
+    "id": "w_112",
+    "front": "협상하다",
+    "mongolian": "хэлэлцээр хийх",
+    "english": "to negotiate"
+  },
+  {
+    "id": "w_113",
+    "front": "광택이 있다",
+    "mongolian": "гялалзсан байх",
+    "english": "to be glossy"
+  },
+  {
+    "id": "w_114",
+    "front": "부드러운",
+    "mongolian": "зөөлөн",
+    "english": "soft"
+  },
+  {
+    "id": "w_115",
+    "front": "복장",
+    "mongolian": "хувцаслалт",
+    "english": "attire / outfit"
+  },
+  {
+    "id": "w_116",
+    "front": "편안한 분위기",
+    "mongolian": "тухтай уур амьсгал",
+    "english": "comfortable atmosphere"
+  },
+  {
+    "id": "w_117",
+    "front": "상징하다",
+    "mongolian": "бэлгэдэх",
+    "english": "to symbolize"
+  },
+  {
+    "id": "w_118",
+    "front": "셔츠",
+    "mongolian": "цамц",
+    "english": "shirt"
+  },
+  {
+    "id": "w_119",
+    "front": "넥타이",
+    "mongolian": "зангиа",
+    "english": "necktie"
+  },
+  {
+    "id": "w_120",
+    "front": "친근감",
+    "mongolian": "дотно мэдрэмж, найрсаг байдал",
+    "english": "sense of friendliness"
+  },
+  {
+    "id": "w_121",
+    "front": "표현하다",
+    "mongolian": "илэрхийлэх",
+    "english": "to express"
+  },
+  {
+    "id": "w_122",
+    "front": "비즈니스 상황",
+    "mongolian": "бизнесийн нөхцөл байдал",
+    "english": "business situation"
+  },
+  {
+    "id": "w_123",
+    "front": "부합하다",
+    "mongolian": "тохирох, нийцэх",
+    "english": "to correspond / fit"
+  },
+  {
+    "id": "w_124",
+    "front": "패션 전략",
+    "mongolian": "хувцаслалтын стратеги",
+    "english": "fashion strategy"
+  },
+  {
+    "id": "w_125",
+    "front": "활용하다",
+    "mongolian": "ашиглах",
+    "english": "to use / utilize"
+  },
+  {
+    "id": "w_126",
+    "front": "육체적",
+    "mongolian": "бие махбодын",
+    "english": "physical"
+  },
+  {
+    "id": "w_127",
+    "front": "정신적",
+    "mongolian": "сэтгэлийн, оюун санааны",
+    "english": "mental"
+  },
+  {
+    "id": "w_128",
+    "front": "피로",
+    "mongolian": "ядаргаа",
+    "english": "fatigue"
+  },
+  {
+    "id": "w_129",
+    "front": "~로 인해",
+    "mongolian": "-аас болж, -ийн улмаас",
+    "english": "because of / due to"
+  },
+  {
+    "id": "w_130",
+    "front": "무기력한 상태",
+    "mongolian": "эрч хүчгүй байдал",
+    "english": "lethargic state"
+  },
+  {
+    "id": "w_131",
+    "front": "지속되다",
+    "mongolian": "үргэлжлэх",
+    "english": "to continue"
+  },
+  {
+    "id": "w_132",
+    "front": "소진증후군",
+    "mongolian": "сульдалтын хам шинж, burnout syndrome",
+    "english": "burnout syndrome"
+  },
+  {
+    "id": "w_133",
+    "front": "의심해 보다",
+    "mongolian": "сэжиглэж үзэх",
+    "english": "to suspect"
+  },
+  {
+    "id": "w_134",
+    "front": "증후군",
+    "mongolian": "хам шинж",
+    "english": "syndrome"
+  },
+  {
+    "id": "w_135",
+    "front": "대표적인 증상",
+    "mongolian": "гол шинж тэмдэг",
+    "english": "representative symptom"
+  },
+  {
+    "id": "w_136",
+    "front": "심한",
+    "mongolian": "хүчтэй, ноцтой",
+    "english": "severe"
+  },
+  {
+    "id": "w_137",
+    "front": "불안감",
+    "mongolian": "түгшүүр, айдас",
+    "english": "anxiety"
+  },
+  {
+    "id": "w_138",
+    "front": "무기력",
+    "mongolian": "эрч хүчгүй байдал",
+    "english": "lethargy"
+  },
+  {
+    "id": "w_139",
+    "front": "삶",
+    "mongolian": "амьдрал",
+    "english": "life"
+  },
+  {
+    "id": "w_140",
+    "front": "~에 대한",
+    "mongolian": "-ийн талаар, -д хандах",
+    "english": "about / toward"
+  },
+  {
+    "id": "w_141",
+    "front": "무관심",
+    "mongolian": "сонирхолгүй байдал",
+    "english": "indifference"
+  },
+  {
+    "id": "w_142",
+    "front": "들 수 있다",
+    "mongolian": "жишээ болгон дурдаж болно",
+    "english": "can be listed / mentioned"
+  },
+  {
+    "id": "w_143",
+    "front": "일단",
+    "mongolian": "нэгэнт, эхлээд",
+    "english": "once / first"
+  },
+  {
+    "id": "w_144",
+    "front": "앓다",
+    "mongolian": "өвдөх, өвчтэй байх",
+    "english": "to suffer from illness"
+  },
+  {
+    "id": "w_145",
+    "front": "회복",
+    "mongolian": "сэргэлт, эдгэрэлт",
+    "english": "recovery"
+  },
+  {
+    "id": "w_146",
+    "front": "회복하다",
+    "mongolian": "сэргэх, эдгэрэх",
+    "english": "to recover"
+  },
+  {
+    "id": "w_147",
+    "front": "힘들다",
+    "mongolian": "хэцүү",
+    "english": "to be difficult"
+  },
+  {
+    "id": "w_148",
+    "front": "휴식",
+    "mongolian": "амралт",
+    "english": "rest"
+  },
+  {
+    "id": "w_149",
+    "front": "재충전",
+    "mongolian": "дахин цэнэглэгдэх, эрч хүчээ сэргээх",
+    "english": "recharging"
+  },
+  {
+    "id": "w_150",
+    "front": "심신",
+    "mongolian": "бие ба сэтгэл",
+    "english": "body and mind"
+  },
+  {
+    "id": "w_151",
+    "front": "건강",
+    "mongolian": "эрүүл мэнд",
+    "english": "health"
+  },
+  {
+    "id": "w_152",
+    "front": "유지하다",
+    "mongolian": "хадгалах",
+    "english": "to maintain"
+  },
+  {
+    "id": "w_153",
+    "front": "자세",
+    "mongolian": "хандлага, байр суурь",
+    "english": "attitude / posture"
+  },
+  {
+    "id": "w_154",
+    "front": "요구되다",
+    "mongolian": "шаардагдах",
+    "english": "to be required"
+  },
+  {
+    "id": "w_155",
+    "front": "평소",
+    "mongolian": "өдөр тутам, жирийн үед",
+    "english": "usually"
+  },
+  {
+    "id": "w_156",
+    "front": "작은 일",
+    "mongolian": "жижиг зүйл",
+    "english": "small thing"
+  },
+  {
+    "id": "w_157",
+    "front": "기뻐하다",
+    "mongolian": "баярлах",
+    "english": "to be glad"
+  },
+  {
+    "id": "w_158",
+    "front": "행복해 하다",
+    "mongolian": "аз жаргалтай байх",
+    "english": "to feel happy"
+  },
+  {
+    "id": "w_159",
+    "front": "활력",
+    "mongolian": "эрч хүч, амьдралын идэвх",
+    "english": "vitality"
+  },
+  {
+    "id": "w_160",
+    "front": "예방하다",
+    "mongolian": "урьдчилан сэргийлэх",
+    "english": "to prevent"
+  },
+  {
+    "id": "w_161",
+    "front": "그동안",
+    "mongolian": "өнөөг хүртэл, энэ хугацаанд",
+    "english": "during that time / so far"
+  },
+  {
+    "id": "w_162",
+    "front": "주로",
+    "mongolian": "голчлон, ихэвчлэн",
+    "english": "mainly"
+  },
+  {
+    "id": "w_163",
+    "front": "인간",
+    "mongolian": "хүн",
+    "english": "human"
+  },
+  {
+    "id": "w_164",
+    "front": "육체노동",
+    "mongolian": "биеийн хөдөлмөр",
+    "english": "physical labor"
+  },
+  {
+    "id": "w_165",
+    "front": "대체하다",
+    "mongolian": "орлох",
+    "english": "to replace"
+  },
+  {
+    "id": "w_166",
+    "front": "앞으로는",
+    "mongolian": "цаашид, ирээдүйд",
+    "english": "from now on / in the future"
+  },
+  {
+    "id": "w_167",
+    "front": "지식노동",
+    "mongolian": "оюуны хөдөлмөр",
+    "english": "knowledge labor"
+  },
+  {
+    "id": "w_168",
+    "front": "~까지도",
+    "mongolian": "бүр -ийг хүртэл",
+    "english": "even up to"
+  },
+  {
+    "id": "w_169",
+    "front": "등장",
+    "mongolian": "гарч ирэх, бий болох",
+    "english": "appearance / emergence"
+  },
+  {
+    "id": "w_170",
+    "front": "잃다",
+    "mongolian": "алдах",
+    "english": "to lose"
+  },
+  {
+    "id": "w_171",
+    "front": "~지도 모른다",
+    "mongolian": "магадгүй",
+    "english": "might / may"
+  },
+  {
+    "id": "w_172",
+    "front": "남는",
+    "mongolian": "үлдсэн, илүүдэл",
+    "english": "remaining"
+  },
+  {
+    "id": "w_173",
+    "front": "노동 자원",
+    "mongolian": "хөдөлмөрийн нөөц",
+    "english": "labor resources"
+  },
+  {
+    "id": "w_174",
+    "front": "긍정적인 면",
+    "mongolian": "эерэг тал",
+    "english": "positive side"
+  },
+  {
+    "id": "w_175",
+    "front": "예를 들어",
+    "mongolian": "жишээлбэл",
+    "english": "for example"
+  },
+  {
+    "id": "w_176",
+    "front": "실적",
+    "mongolian": "гүйцэтгэл, үр дүн, борлуулалтын амжилт",
+    "english": "performance / results"
+  },
+  {
+    "id": "w_177",
+    "front": "스포츠 경기",
+    "mongolian": "спортын тэмцээн",
+    "english": "sports game"
+  },
+  {
+    "id": "w_178",
+    "front": "결과",
+    "mongolian": "үр дүн",
+    "english": "result"
+  },
+  {
+    "id": "w_179",
+    "front": "데이터",
+    "mongolian": "өгөгдөл, мэдээлэл",
+    "english": "data"
+  },
+  {
+    "id": "w_180",
+    "front": "수집",
+    "mongolian": "цуглуулалт",
+    "english": "collection"
+  },
+  {
+    "id": "w_181",
+    "front": "분석",
+    "mongolian": "шинжилгээ, дүн шинжилгээ",
+    "english": "analysis"
+  },
+  {
+    "id": "w_182",
+    "front": "단순업무",
+    "mongolian": "энгийн ажил",
+    "english": "simple task"
+  },
+  {
+    "id": "w_183",
+    "front": "로봇기자",
+    "mongolian": "робот сэтгүүлч",
+    "english": "robot journalist"
+  },
+  {
+    "id": "w_184",
+    "front": "담당하다",
+    "mongolian": "хариуцах",
+    "english": "to be in charge of"
+  },
+  {
+    "id": "w_185",
+    "front": "기자",
+    "mongolian": "сэтгүүлч",
+    "english": "journalist"
+  },
+  {
+    "id": "w_186",
+    "front": "심층 분석",
+    "mongolian": "гүнзгий дүн шинжилгээ",
+    "english": "in-depth analysis"
+  },
+  {
+    "id": "w_187",
+    "front": "인터뷰",
+    "mongolian": "ярилцлага",
+    "english": "interview"
+  },
+  {
+    "id": "w_188",
+    "front": "깊이 있는",
+    "mongolian": "гүн агуулгатай",
+    "english": "in-depth"
+  },
+  {
+    "id": "w_189",
+    "front": "기사 작성",
+    "mongolian": "нийтлэл бичих",
+    "english": "article writing"
+  },
+  {
+    "id": "w_190",
+    "front": "집중하다",
+    "mongolian": "төвлөрөх",
+    "english": "to focus"
+  }
+]
