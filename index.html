@@ -807,7 +807,6 @@
 
     const els = {
       themeBtn: $("themeBtn"),
-
       flashcard: $("flashcard"),
       flashEmpty: $("flashEmpty"),
       flashContent: $("flashContent"),
@@ -815,14 +814,12 @@
       mnMeaning: $("mnMeaning"),
       enMeaning: $("enMeaning"),
       counter: $("counter"),
-
       prevBtn: $("prevBtn"),
       flipBtn: $("flipBtn"),
       nextBtn: $("nextBtn"),
       shuffleBtn: $("shuffleBtn"),
       knowBtn: $("knowBtn"),
       unknownBtn: $("unknownBtn"),
-
       wordForm: $("wordForm"),
       editId: $("editId"),
       frontInput: $("frontInput"),
@@ -830,13 +827,11 @@
       enInput: $("enInput"),
       saveBtn: $("saveBtn"),
       cancelEditBtn: $("cancelEditBtn"),
-
       searchInput: $("searchInput"),
       wordList: $("wordList"),
       exportBtn: $("exportBtn"),
       importInput: $("importInput"),
       deleteAllBtn: $("deleteAllBtn"),
-
       quizEmpty: $("quizEmpty"),
       quizContent: $("quizContent"),
       quizMain: $("quizMain"),
@@ -854,14 +849,12 @@
       resultMessage: $("resultMessage"),
       startAgainBtn: $("startAgainBtn"),
       shuffleAgainBtn: $("shuffleAgainBtn"),
-
       totalWords: $("totalWords"),
       studied: $("studied"),
       known: $("known"),
       unknown: $("unknown"),
       confidenceFill: $("confidenceFill"),
       confidenceText: $("confidenceText"),
-
       toast: $("toast")
     };
 
@@ -894,23 +887,42 @@
       localStorage.setItem(STORAGE.progress, JSON.stringify(progress));
     }
 
-    function loadData() {
+    async function loadData() {
       const savedWords = parseJSON(localStorage.getItem(STORAGE.words), null);
 
       if (Array.isArray(savedWords) && savedWords.length > 0) {
         words = savedWords.map(cleanWord).filter(w => w.front && w.mongolian && w.english);
       } else {
-        words = STARTER_WORDS.map(cleanWord);
+        try {
+          const response = await fetch("words.json", { cache: "no-store" });
+
+          if (!response.ok) {
+            throw new Error("Could not load words.json");
+          }
+
+          const githubWords = await response.json();
+
+          if (Array.isArray(githubWords) && githubWords.length > 0) {
+            words = githubWords.map(cleanWord).filter(w => w.front && w.mongolian && w.english);
+          } else {
+            words = STARTER_WORDS.map(cleanWord);
+          }
+        } catch (error) {
+          words = STARTER_WORDS.map(cleanWord);
+        }
+
         saveWords();
       }
 
       const savedProgress = parseJSON(localStorage.getItem(STORAGE.progress), null);
+
       if (savedProgress) {
         progress.known = Number(savedProgress.known) || 0;
         progress.unknown = Number(savedProgress.unknown) || 0;
       }
 
       const theme = localStorage.getItem(STORAGE.theme);
+
       if (theme === "dark") {
         document.body.classList.add("dark");
         els.themeBtn.textContent = "☀️";
@@ -1455,8 +1467,8 @@
       });
     }
 
-    function init() {
-      loadData();
+    async function init() {
+      await loadData();
       resetQuiz(true);
       bindEvents();
       renderAll();
