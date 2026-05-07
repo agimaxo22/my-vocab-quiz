@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f7b8c8" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="My Vocab Quiz" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <title>My Vocab Quiz</title>
+
+  <style>
+    :root {
+      --bg: #fff7fb;
+      --card: #ffffff;
+      --text: #2f2638;
+      --muted: #7c7188;
+      --accent: #f28fb1;
+      --accent2: #b5a4ff;
+      --good: #35a875;
+      --bad: #e85d75;
+      --border: rgba(80, 60, 100, 0.14);
+      --shadow: 0 16px 40px rgba(90, 70, 120, 0.13);
+    }
+
+    body.dark {
+      --bg: #171827;
+      --card: #232638;
+      --text: #f9f5ff;
+      --muted: #c7bfd4;
+      --accent: #ff9abb;
+      --accent2: #b9abff;
+      --border: rgba(255, 255, 255, 0.1);
+      --shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Apple SD Gothic Neo", Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      transition: 0.2s;
+    }
+
+    .app {
+      width: 100%;
+      max-width: 520px;
+      min-height: 100vh;
+      padding: 18px 16px 110px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      gap: 12px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.7rem;
+      letter-spacing: -0.04em;
+    }
+
+    .subtitle {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    button, input {
+      font: inherit;
+    }
+
+    button {
+      border: 0;
+      cursor: pointer;
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+
+    button:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .theme-btn {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      background: var(--card);
+      color: var(--text);
+      box-shadow: var(--shadow);
+      font-size: 1.15rem;
+    }
+
+    .panel {
+      display: none;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .panel.active {
+      display: block;
+    }
+
+    .panel-title {
+      margin: 0 0 14px;
+      font-size: 1.25rem;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 14px;
+    }
+
+    .flash-wrap {
+      perspective: 1000px;
+    }
+
+    .flashcard {
+      height: 330px;
+      border-radius: 30px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.45s ease;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .flashcard.flipped {
+      transform: rotateY(180deg);
+    }
+
+    .face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      border-radius: 30px;
+      background: linear-gradient(145deg, #fff, #fff0f6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 28px;
+    }
+
+    body.dark .face {
+      background: linear-gradient(145deg, #2a2d42, #272437);
+    }
+
+    .back {
+      transform: rotateY(180deg);
+      background: linear-gradient(145deg, #fff, #f3f5ff);
+    }
+
+    body.dark .back {
+      background: linear-gradient(145deg, #25293d, #243447);
+    }
+
+    .front-word {
+      font-size: clamp(2.2rem, 10vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      word-break: keep-all;
+    }
+
+    .meaning {
+      display: grid;
+      gap: 18px;
+    }
+
+    .meaning-mn {
+      font-size: clamp(1.8rem, 8vw, 2.7rem);
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .meaning-en {
+      color: var(--muted);
+      font-size: 1.15rem;
+      line-height: 1.45;
+    }
+
+    .counter {
+      text-align: center;
+      color: var(--muted);
+      margin: 14px 0;
+      font-weight: 600;
+    }
+
+    .grid2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .grid3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+    }
+
+    .btn {
+      min-height: 52px;
+      border-radius: 18px;
+      padding: 12px 14px;
+      background: #f4f0f8;
+      color: var(--text);
+      font-weight: 750;
+      border: 1px solid var(--border);
+    }
+
+    body.dark .btn {
+      background: rgba(255,255,255,0.07);
+    }
+
+    .primary {
+      background: linear-gradient(135deg, var(--accent), #ffadc7);
+      color: white;
+      border: 0;
+    }
+
+    .purple {
+      background: linear-gradient(135deg, var(--accent2), #c7bdff);
+      color: white;
+      border: 0;
+    }
+
+    .good {
+      background: linear-gradient(135deg, #64d39d, var(--good));
+      color: white;
+      border: 0;
+    }
+
+    .bad {
+      background: linear-gradient(135deg, #ff93a7, var(--bad));
+      color: white;
+      border: 0;
+    }
+
+    .danger {
+      background: var(--bad);
+      color: white;
+      border: 0;
+    }
+
+    form {
+      display: grid;
+      gap: 12px;
+    }
+
+    label {
+      display: grid;
+      gap: 7px;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    input {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 15px 16px;
+      background: #fff;
+      color: var(--text);
+      outline: none;
+    }
+
+    body.dark input {
+      background: rgba(255,255,255,0.07);
+    }
+
+    input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px rgba(242, 143, 177, 0.2);
+    }
+
+    .word-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .word-item {
+      background: rgba(130, 110, 160, 0.07);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 14px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .word-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .word-title {
+      font-size: 1.15rem;
+      font-weight: 850;
+    }
+
+    .word-meaning {
+      color: var(--muted);
+      line-height: 1.4;
+      font-size: 0.95rem;
+    }
+
+    .mini-actions {
+      display: flex;
+      gap: 6px;
+    }
+
+    .mini {
+      border-radius: 12px;
+      padding: 8px 10px;
+      background: var(--card);
+      color: var(--text);
+      border: 1px solid var(--border);
+      font-weight: 700;
+    }
+
+    .quiz-word {
+      background: linear-gradient(135deg, rgba(242,143,177,0.18), rgba(181,164,255,0.18));
+      border-radius: 24px;
+      padding: 26px 18px;
+      text-align: center;
+      font-size: clamp(2rem, 9vw, 3rem);
+      font-weight: 850;
+      margin-bottom: 14px;
+      line-height: 1.15;
+    }
+
+    .options {
+      display: grid;
+      gap: 10px;
+    }
+
+    .option {
+      text-align: left;
+      min-height: 58px;
+      border-radius: 18px;
+      padding: 14px 16px;
+      background: rgba(130, 110, 160, 0.07);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-weight: 750;
+    }
+
+    .option.correct {
+      background: rgba(53, 168, 117, 0.18);
+      border-color: rgba(53, 168, 117, 0.5);
+    }
+
+    .option.wrong {
+      background: rgba(232, 93, 117, 0.18);
+      border-color: rgba(232, 93, 117, 0.5);
+    }
+
+    .feedback {
+      min-height: 26px;
+      margin: 12px 0;
+      font-weight: 800;
+      line-height: 1.45;
+    }
+
+    .result-box {
+      text-align: center;
+      background: rgba(130, 110, 160, 0.07);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 22px 18px;
+      margin-bottom: 14px;
+    }
+
+    .result-percent {
+      font-size: clamp(2.8rem, 14vw, 4.2rem);
+      font-weight: 900;
+      line-height: 1;
+      margin: 8px 0;
+    }
+
+    .result-score {
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .stat {
+      border-radius: 20px;
+      padding: 16px;
+      background: rgba(130, 110, 160, 0.07);
+      border: 1px solid var(--border);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.7rem;
+      margin-top: 6px;
+    }
+
+    .bar {
+      height: 14px;
+      background: rgba(130, 110, 160, 0.14);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-top: 18px;
+    }
+
+    .fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      border-radius: 999px;
+      transition: 0.2s;
+    }
+
+    .empty {
+      text-align: center;
+      color: var(--muted);
+      padding: 30px 10px;
+      line-height: 1.5;
+    }
+
+    .bottom-nav {
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: max(12px, env(safe-area-inset-bottom));
+      width: min(100%, 520px);
+      padding: 0 12px;
+    }
+
+    .nav-inner {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 7px;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 8px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+    }
+
+    body.dark .nav-inner {
+      background: rgba(25,27,40,0.94);
+    }
+
+    .nav-btn {
+      min-height: 62px;
+      border-radius: 18px;
+      background: transparent;
+      color: var(--muted);
+      display: grid;
+      place-items: center;
+      gap: 2px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 6px 2px;
+    }
+
+    .nav-btn span:first-child {
+      font-size: 1.15rem;
+    }
+
+    .nav-btn.active {
+      background: rgba(242,143,177,0.18);
+      color: var(--text);
+    }
+
+    .toast {
+      position: fixed;
+      top: calc(env(safe-area-inset-top) + 14px);
+      left: 50%;
+      transform: translateX(-50%) translateY(-14px);
+      background: rgba(30, 25, 40, 0.92);
+      color: white;
+      padding: 12px 16px;
+      border-radius: 16px;
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.2s;
+      font-weight: 700;
+      z-index: 20;
+      max-width: calc(100% - 30px);
+      text-align: center;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 390px) {
+      .app {
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+
+      .flashcard {
+        height: 300px;
+      }
+
+      .grid3 {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div>
+        <h1>My Vocab Quiz</h1>
+        <div class="subtitle">Korean · Mongolian · English</div>
+      </div>
+      <button class="theme-btn" id="themeBtn">🌙</button>
+    </header>
+
+    <section class="panel active" id="flashcardsPanel">
+      <h2 class="panel-title">Flashcards</h2>
+      <div class="small">Tap the card or press Flip.</div>
+
+      <div id="flashEmpty" class="empty hidden">
+        No words yet. Add words first.
+      </div>
+
+      <div id="flashContent">
+        <div class="flash-wrap">
+          <div class="flashcard" id="flashcard">
+            <div class="face front">
+              <div class="front-word" id="frontWord">-</div>
+            </div>
+
+            <div class="face back">
+              <div class="meaning">
+                <div class="meaning-mn" id="mnMeaning">-</div>
+                <div class="meaning-en" id="enMeaning">-</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="counter" id="counter">1 / 1</div>
+
+        <div class="grid3">
+          <button class="btn" id="prevBtn">Previous</button>
+          <button class="btn primary" id="flipBtn">Flip</button>
+          <button class="btn" id="nextBtn">Next</button>
+        </div>
+
+        <div style="height: 10px;"></div>
+
+        <div class="grid2">
+          <button class="btn good" id="knowBtn">I know</button>
+          <button class="btn bad" id="unknownBtn">I don’t know</button>
+        </div>
+
+        <div style="height: 10px;"></div>
+
+        <button class="btn purple" id="shuffleBtn" style="width:100%;">Shuffle Cards</button>
+      </div>
+    </section>
+
+    <section class="panel" id="addPanel">
+      <h2 class="panel-title">Add Word</h2>
+      <div class="small">Only Korean word + Mongolian + English.</div>
+
+      <form id="wordForm">
+        <input type="hidden" id="editId" />
+
+        <label>
+          Korean word
+          <input id="frontInput" placeholder="예: 무기력하다" required />
+        </label>
+
+        <label>
+          Mongolian meaning
+          <input id="mnInput" placeholder="эрч хүчгүй байх" required />
+        </label>
+
+        <label>
+          English meaning
+          <input id="enInput" placeholder="to feel powerless" required />
+        </label>
+
+        <button class="btn primary" id="saveBtn" type="submit">Add Word</button>
+        <button class="btn hidden" id="cancelEditBtn" type="button">Cancel Edit</button>
+      </form>
+    </section>
+
+    <section class="panel" id="quizPanel">
+      <h2 class="panel-title">Quiz</h2>
+      <div class="small">Each question appears once. Finish the quiz to see your score.</div>
+
+      <div id="quizEmpty" class="empty hidden">
+        Add at least 2 words to use quiz mode.
+      </div>
+
+      <div id="quizContent">
+        <div class="counter">
+          <span id="quizCount">Question 1</span> ·
+          <span id="quizScore">Score: 0</span>
+        </div>
+
+        <div id="quizMain">
+          <div class="quiz-word" id="quizWord">-</div>
+          <div class="options" id="quizOptions"></div>
+          <div class="feedback" id="feedback"></div>
+
+          <button class="btn primary" id="nextQuizBtn" style="width:100%;" disabled>Next Question</button>
+
+          <div style="height:10px;"></div>
+
+          <div class="grid2">
+            <button class="btn purple" id="shuffleQuizBtn">Shuffle Quiz</button>
+            <button class="btn" id="restartQuizBtn">Restart</button>
+          </div>
+        </div>
+
+        <div id="quizResult" class="hidden">
+          <div class="result-box">
+            <div class="small">Final Result</div>
+            <div class="result-percent" id="resultPercent">0%</div>
+            <div class="result-score" id="resultScore">0 / 0</div>
+            <div class="feedback" id="resultMessage"></div>
+          </div>
+
+          <div class="grid2">
+            <button class="btn primary" id="startAgainBtn">Start Again</button>
+            <button class="btn purple" id="shuffleAgainBtn">Shuffle & Start</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="wordsPanel">
+      <h2 class="panel-title">Words</h2>
+      <div class="small">Search, edit, delete, backup.</div>
+
+      <input id="searchInput" type="search" placeholder="Search words..." />
+
+      <div style="height: 12px;"></div>
+
+      <div class="grid2">
+        <button class="btn purple" id="exportBtn">Export</button>
+        <label class="btn" for="importInput" style="text-align:center; display:flex; align-items:center; justify-content:center;">
+          Import
+        </label>
+      </div>
+
+      <input id="importInput" class="hidden" type="file" accept="application/json" />
+
+      <div style="height: 10px;"></div>
+
+      <button class="btn danger" id="deleteAllBtn" style="width:100%;">Delete All Words</button>
+
+      <div class="word-list" id="wordList"></div>
+    </section>
+
+    <section class="panel" id="progressPanel">
+      <h2 class="panel-title">Progress</h2>
+      <div class="small">Saved only on this device.</div>
+
+      <div class="stats">
+        <div class="stat">
+          Total Words
+          <strong id="totalWords">0</strong>
+        </div>
+
+        <div class="stat">
+          Studied
+          <strong id="studied">0</strong>
+        </div>
+
+        <div class="stat">
+          I Know
+          <strong id="known">0</strong>
+        </div>
+
+        <div class="stat">
+          Don’t Know
+          <strong id="unknown">0</strong>
+        </div>
+      </div>
+
+      <div class="bar">
+        <div class="fill" id="confidenceFill"></div>
+      </div>
+
+      <div class="counter" id="confidenceText">Confidence: 0%</div>
+    </section>
+  </div>
+
+  <nav class="bottom-nav">
+    <div class="nav-inner">
+      <button class="nav-btn active" data-panel="flashcardsPanel">
+        <span>🪄</span>
+        <span>Cards</span>
+      </button>
+      <button class="nav-btn" data-panel="addPanel">
+        <span>➕</span>
+        <span>Add</span>
+      </button>
+      <button class="nav-btn" data-panel="quizPanel">
+        <span>❓</span>
+        <span>Quiz</span>
+      </button>
+      <button class="nav-btn" data-panel="wordsPanel">
+        <span>📚</span>
+        <span>Words</span>
+      </button>
+      <button class="nav-btn" data-panel="progressPanel">
+        <span>📈</span>
+        <span>Stats</span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    const STORAGE = {
+      words: "myVocabQuiz.simple.words",
+      progress: "myVocabQuiz.simple.progress",
+      theme: "myVocabQuiz.simple.theme"
+    };
+
+    const STARTER_WORDS = [
+      {
+        front: "무기력하다",
+        mongolian: "эрч хүчгүй байх",
+        english: "to feel powerless / lethargic"
+      },
+      {
+        front: "회복하다",
+        mongolian: "сэргэх, эдгэрэх",
+        english: "to recover"
+      },
+      {
+        front: "피로",
+        mongolian: "ядаргаа",
+        english: "fatigue"
+      },
+      {
+        front: "불안감",
+        mongolian: "түгшүүр",
+        english: "anxiety"
+      },
+      {
+        front: "관심",
+        mongolian: "сонирхол",
+        english: "interest"
+      }
+    ];
+
+    let words = [];
+    let current = 0;
+    let flipped = false;
+
+    let progress = {
+      known: 0,
+      unknown: 0
+    };
+
+    let quiz = {
+      order: [],
+      index: 0,
+      score: 0,
+      answerId: null,
+      answered: false,
+      finished: false
+    };
+
+    const $ = (id) => document.getElementById(id);
+
+    const els = {
+      themeBtn: $("themeBtn"),
+
+      flashcard: $("flashcard"),
+      flashEmpty: $("flashEmpty"),
+      flashContent: $("flashContent"),
+      frontWord: $("frontWord"),
+      mnMeaning: $("mnMeaning"),
+      enMeaning: $("enMeaning"),
+      counter: $("counter"),
+
+      prevBtn: $("prevBtn"),
+      flipBtn: $("flipBtn"),
+      nextBtn: $("nextBtn"),
+      shuffleBtn: $("shuffleBtn"),
+      knowBtn: $("knowBtn"),
+      unknownBtn: $("unknownBtn"),
+
+      wordForm: $("wordForm"),
+      editId: $("editId"),
+      frontInput: $("frontInput"),
+      mnInput: $("mnInput"),
+      enInput: $("enInput"),
+      saveBtn: $("saveBtn"),
+      cancelEditBtn: $("cancelEditBtn"),
+
+      searchInput: $("searchInput"),
+      wordList: $("wordList"),
+      exportBtn: $("exportBtn"),
+      importInput: $("importInput"),
+      deleteAllBtn: $("deleteAllBtn"),
+
+      quizEmpty: $("quizEmpty"),
+      quizContent: $("quizContent"),
+      quizMain: $("quizMain"),
+      quizResult: $("quizResult"),
+      quizCount: $("quizCount"),
+      quizScore: $("quizScore"),
+      quizWord: $("quizWord"),
+      quizOptions: $("quizOptions"),
+      feedback: $("feedback"),
+      nextQuizBtn: $("nextQuizBtn"),
+      shuffleQuizBtn: $("shuffleQuizBtn"),
+      restartQuizBtn: $("restartQuizBtn"),
+      resultPercent: $("resultPercent"),
+      resultScore: $("resultScore"),
+      resultMessage: $("resultMessage"),
+      startAgainBtn: $("startAgainBtn"),
+      shuffleAgainBtn: $("shuffleAgainBtn"),
+
+      totalWords: $("totalWords"),
+      studied: $("studied"),
+      known: $("known"),
+      unknown: $("unknown"),
+      confidenceFill: $("confidenceFill"),
+      confidenceText: $("confidenceText"),
+
+      toast: $("toast")
+    };
+
+    function uid() {
+      return "w_" + Date.now().toString(36) + "_" + Math.random().toString(36).slice(2, 8);
+    }
+
+    function parseJSON(value, fallback) {
+      try {
+        return JSON.parse(value) || fallback;
+      } catch {
+        return fallback;
+      }
+    }
+
+    function cleanWord(word) {
+      return {
+        id: word.id || uid(),
+        front: String(word.front || "").trim(),
+        mongolian: String(word.mongolian || "").trim(),
+        english: String(word.english || "").trim()
+      };
+    }
+
+    function saveWords() {
+      localStorage.setItem(STORAGE.words, JSON.stringify(words));
+    }
+
+    function saveProgress() {
+      localStorage.setItem(STORAGE.progress, JSON.stringify(progress));
+    }
+
+    function loadData() {
+      const savedWords = parseJSON(localStorage.getItem(STORAGE.words), null);
+
+      if (Array.isArray(savedWords) && savedWords.length > 0) {
+        words = savedWords.map(cleanWord).filter(w => w.front && w.mongolian && w.english);
+      } else {
+        words = STARTER_WORDS.map(cleanWord);
+        saveWords();
+      }
+
+      const savedProgress = parseJSON(localStorage.getItem(STORAGE.progress), null);
+      if (savedProgress) {
+        progress.known = Number(savedProgress.known) || 0;
+        progress.unknown = Number(savedProgress.unknown) || 0;
+      }
+
+      const theme = localStorage.getItem(STORAGE.theme);
+      if (theme === "dark") {
+        document.body.classList.add("dark");
+        els.themeBtn.textContent = "☀️";
+      }
+    }
+
+    function toast(message) {
+      els.toast.textContent = message;
+      els.toast.classList.add("show");
+
+      clearTimeout(toast.timer);
+      toast.timer = setTimeout(() => {
+        els.toast.classList.remove("show");
+      }, 1600);
+    }
+
+    function escapeHTML(text) {
+      return String(text)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#39;");
+    }
+
+    function shuffleArray(arr) {
+      const a = arr.slice();
+
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+
+      return a;
+    }
+
+    function currentWord() {
+      if (!words.length) return null;
+
+      if (current < 0) current = 0;
+      if (current >= words.length) current = words.length - 1;
+
+      return words[current];
+    }
+
+    function renderFlashcard() {
+      const word = currentWord();
+
+      if (!word) {
+        els.flashEmpty.classList.remove("hidden");
+        els.flashContent.classList.add("hidden");
+        return;
+      }
+
+      els.flashEmpty.classList.add("hidden");
+      els.flashContent.classList.remove("hidden");
+
+      els.flashcard.classList.toggle("flipped", flipped);
+      els.frontWord.textContent = word.front;
+      els.mnMeaning.textContent = word.mongolian;
+      els.enMeaning.textContent = word.english;
+      els.counter.textContent = `${current + 1} / ${words.length}`;
+    }
+
+    function flipCard() {
+      if (!words.length) return;
+      flipped = !flipped;
+      renderFlashcard();
+    }
+
+    function nextCard() {
+      if (!words.length) return;
+      current = (current + 1) % words.length;
+      flipped = false;
+      renderFlashcard();
+    }
+
+    function prevCard() {
+      if (!words.length) return;
+      current = (current - 1 + words.length) % words.length;
+      flipped = false;
+      renderFlashcard();
+    }
+
+    function shuffleCards() {
+      if (words.length < 2) return;
+
+      words = shuffleArray(words);
+      current = 0;
+      flipped = false;
+
+      saveWords();
+      renderAll();
+      toast("Cards shuffled");
+    }
+
+    function mark(type) {
+      if (type === "known") {
+        progress.known++;
+        toast("Marked as known");
+      } else {
+        progress.unknown++;
+        toast("Marked as unknown");
+      }
+
+      saveProgress();
+      nextCard();
+      renderProgress();
+    }
+
+    function showPanel(panelId) {
+      document.querySelectorAll(".panel").forEach(panel => {
+        panel.classList.toggle("active", panel.id === panelId);
+      });
+
+      document.querySelectorAll(".nav-btn").forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.panel === panelId);
+      });
+
+      if (panelId === "quizPanel") {
+        prepareQuiz();
+      }
+    }
+
+    function resetForm() {
+      els.wordForm.reset();
+      els.editId.value = "";
+      els.saveBtn.textContent = "Add Word";
+      els.cancelEditBtn.classList.add("hidden");
+    }
+
+    function saveWordFromForm(e) {
+      e.preventDefault();
+
+      const word = cleanWord({
+        id: els.editId.value || uid(),
+        front: els.frontInput.value,
+        mongolian: els.mnInput.value,
+        english: els.enInput.value
+      });
+
+      if (!word.front || !word.mongolian || !word.english) {
+        toast("Fill all fields");
+        return;
+      }
+
+      const index = words.findIndex(w => w.id === word.id);
+
+      if (index >= 0) {
+        words[index] = word;
+        toast("Word updated");
+      } else {
+        words.push(word);
+        current = words.length - 1;
+        toast("Word added");
+      }
+
+      saveWords();
+      resetForm();
+      resetQuiz(true);
+      renderAll();
+      showPanel("wordsPanel");
+    }
+
+    function editWord(id) {
+      const word = words.find(w => w.id === id);
+      if (!word) return;
+
+      els.editId.value = word.id;
+      els.frontInput.value = word.front;
+      els.mnInput.value = word.mongolian;
+      els.enInput.value = word.english;
+      els.saveBtn.textContent = "Save Changes";
+      els.cancelEditBtn.classList.remove("hidden");
+
+      showPanel("addPanel");
+    }
+
+    function deleteWord(id) {
+      const word = words.find(w => w.id === id);
+      if (!word) return;
+
+      if (!confirm(`Delete "${word.front}"?`)) return;
+
+      words = words.filter(w => w.id !== id);
+
+      if (current >= words.length) {
+        current = Math.max(0, words.length - 1);
+      }
+
+      saveWords();
+      resetQuiz(true);
+      renderAll();
+      toast("Word deleted");
+    }
+
+    function renderWords() {
+      const q = els.searchInput.value.trim().toLowerCase();
+
+      const filtered = words.filter(w => {
+        return [w.front, w.mongolian, w.english].some(v =>
+          v.toLowerCase().includes(q)
+        );
+      });
+
+      els.wordList.innerHTML = "";
+
+      if (!filtered.length) {
+        els.wordList.innerHTML = `<div class="empty">No words found.</div>`;
+        return;
+      }
+
+      filtered.forEach(word => {
+        const div = document.createElement("div");
+        div.className = "word-item";
+
+        div.innerHTML = `
+          <div class="word-top">
+            <div>
+              <div class="word-title">${escapeHTML(word.front)}</div>
+              <div class="word-meaning">${escapeHTML(word.mongolian)}</div>
+              <div class="word-meaning">${escapeHTML(word.english)}</div>
+            </div>
+            <div class="mini-actions">
+              <button class="mini" data-action="edit" data-id="${word.id}">Edit</button>
+              <button class="mini" data-action="delete" data-id="${word.id}">Delete</button>
+            </div>
+          </div>
+        `;
+
+        els.wordList.appendChild(div);
+      });
+    }
+
+    function resetQuiz(shuffle = true) {
+      quiz.order = shuffle ? shuffleArray(words.map(w => w.id)) : words.map(w => w.id);
+      quiz.index = 0;
+      quiz.score = 0;
+      quiz.answerId = null;
+      quiz.answered = false;
+      quiz.finished = false;
+    }
+
+    function prepareQuiz() {
+      if (words.length < 2) {
+        els.quizEmpty.classList.remove("hidden");
+        els.quizContent.classList.add("hidden");
+        return;
+      }
+
+      els.quizEmpty.classList.add("hidden");
+      els.quizContent.classList.remove("hidden");
+
+      if (!quiz.order.length || quiz.finished || quiz.order.length !== words.length) {
+        resetQuiz(true);
+      }
+
+      renderQuiz();
+    }
+
+    function getWord(id) {
+      return words.find(w => w.id === id);
+    }
+
+    function renderQuiz() {
+      if (words.length < 2) return;
+
+      if (quiz.finished) {
+        renderQuizFinished();
+        return;
+      }
+
+      const answer = getWord(quiz.order[quiz.index]);
+
+      if (!answer) {
+        quiz.finished = true;
+        renderQuizFinished();
+        return;
+      }
+
+      els.quizMain.classList.remove("hidden");
+      els.quizResult.classList.add("hidden");
+
+      quiz.answerId = answer.id;
+      quiz.answered = false;
+
+      els.quizWord.textContent = answer.front;
+      els.quizCount.textContent = `Question ${quiz.index + 1} / ${quiz.order.length}`;
+      els.quizScore.textContent = `Score: ${quiz.score} / ${quiz.order.length}`;
+      els.feedback.textContent = "";
+      els.feedback.style.color = "var(--text)";
+      els.nextQuizBtn.disabled = true;
+
+      if (quiz.index === quiz.order.length - 1) {
+        els.nextQuizBtn.textContent = "Finish Quiz";
+      } else {
+        els.nextQuizBtn.textContent = "Next Question";
+      }
+
+      const wrongs = shuffleArray(words.filter(w => w.id !== answer.id)).slice(0, 3);
+      const choices = shuffleArray([answer, ...wrongs]);
+
+      els.quizOptions.innerHTML = "";
+
+      choices.forEach(choice => {
+        const btn = document.createElement("button");
+        btn.className = "option";
+        btn.dataset.id = choice.id;
+        btn.textContent = `${choice.mongolian} / ${choice.english}`;
+        els.quizOptions.appendChild(btn);
+      });
+    }
+
+    function answerQuiz(id) {
+      if (quiz.answered || quiz.finished) return;
+
+      quiz.answered = true;
+
+      const correct = id === quiz.answerId;
+
+      if (correct) {
+        quiz.score++;
+        els.feedback.textContent = "Correct!";
+        els.feedback.style.color = "var(--good)";
+      } else {
+        const answer = getWord(quiz.answerId);
+        els.feedback.textContent = `Wrong. Answer: ${answer.mongolian} / ${answer.english}`;
+        els.feedback.style.color = "var(--bad)";
+      }
+
+      els.quizScore.textContent = `Score: ${quiz.score} / ${quiz.order.length}`;
+      els.nextQuizBtn.disabled = false;
+
+      document.querySelectorAll(".option").forEach(btn => {
+        btn.disabled = true;
+
+        if (btn.dataset.id === quiz.answerId) {
+          btn.classList.add("correct");
+        } else if (btn.dataset.id === id) {
+          btn.classList.add("wrong");
+        }
+      });
+    }
+
+    function nextQuiz() {
+      if (!quiz.answered) return;
+
+      if (quiz.index >= quiz.order.length - 1) {
+        quiz.finished = true;
+        renderQuizFinished();
+        return;
+      }
+
+      quiz.index++;
+      renderQuiz();
+    }
+
+    function renderQuizFinished() {
+      quiz.finished = true;
+
+      const total = quiz.order.length;
+      const percent = total ? Math.round((quiz.score / total) * 100) : 0;
+
+      els.quizMain.classList.add("hidden");
+      els.quizResult.classList.remove("hidden");
+
+      els.quizCount.textContent = "Quiz Finished";
+      els.quizScore.textContent = `Final Score: ${quiz.score} / ${total}`;
+
+      els.resultPercent.textContent = `${percent}%`;
+      els.resultScore.textContent = `${quiz.score} correct out of ${total}`;
+
+      if (percent >= 80) {
+        els.resultMessage.textContent = "Great job! 🎉";
+        els.resultMessage.style.color = "var(--good)";
+      } else if (percent >= 50) {
+        els.resultMessage.textContent = "Good try. Review the hard words again.";
+        els.resultMessage.style.color = "var(--text)";
+      } else {
+        els.resultMessage.textContent = "Keep practicing. You can improve fast.";
+        els.resultMessage.style.color = "var(--bad)";
+      }
+    }
+
+    function startQuizAgain(shuffle) {
+      resetQuiz(shuffle);
+      renderQuiz();
+      toast(shuffle ? "Quiz shuffled" : "Quiz restarted");
+    }
+
+    function renderProgress() {
+      const studied = progress.known + progress.unknown;
+      const confidence = studied ? Math.round((progress.known / studied) * 100) : 0;
+
+      els.totalWords.textContent = words.length;
+      els.studied.textContent = studied;
+      els.known.textContent = progress.known;
+      els.unknown.textContent = progress.unknown;
+      els.confidenceFill.style.width = confidence + "%";
+      els.confidenceText.textContent = `Confidence: ${confidence}%`;
+    }
+
+    function exportWords() {
+      const blob = new Blob([JSON.stringify(words, null, 2)], {
+        type: "application/json"
+      });
+
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      const date = new Date().toISOString().slice(0, 10);
+
+      a.href = url;
+      a.download = `my-vocab-backup-${date}.json`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+
+      URL.revokeObjectURL(url);
+      toast("Backup exported");
+    }
+
+    function importWords(file) {
+      if (!file) return;
+
+      const reader = new FileReader();
+
+      reader.onload = function(e) {
+        try {
+          const data = JSON.parse(e.target.result);
+
+          if (!Array.isArray(data)) throw new Error("Invalid file");
+
+          const cleaned = data
+            .map(cleanWord)
+            .filter(w => w.front && w.mongolian && w.english);
+
+          if (!cleaned.length) throw new Error("No valid words");
+
+          if (!confirm("Import will replace your current words. Continue?")) return;
+
+          words = cleaned;
+          current = 0;
+          flipped = false;
+
+          saveWords();
+          resetQuiz(true);
+          renderAll();
+          toast("Imported");
+        } catch {
+          toast("Import failed");
+        }
+
+        els.importInput.value = "";
+      };
+
+      reader.readAsText(file);
+    }
+
+    function deleteAllWords() {
+      if (!confirm("Delete all words?")) return;
+      if (!confirm("Final warning. This cannot be undone.")) return;
+
+      words = [];
+      current = 0;
+      flipped = false;
+
+      saveWords();
+      resetQuiz(true);
+      renderAll();
+      toast("All words deleted");
+    }
+
+    function renderAll() {
+      renderFlashcard();
+      renderWords();
+      renderProgress();
+
+      if (words.length < 2) {
+        els.quizEmpty.classList.remove("hidden");
+        els.quizContent.classList.add("hidden");
+      }
+    }
+
+    function bindEvents() {
+      els.themeBtn.addEventListener("click", () => {
+        const dark = document.body.classList.toggle("dark");
+        els.themeBtn.textContent = dark ? "☀️" : "🌙";
+        localStorage.setItem(STORAGE.theme, dark ? "dark" : "light");
+      });
+
+      document.querySelectorAll(".nav-btn").forEach(btn => {
+        btn.addEventListener("click", () => showPanel(btn.dataset.panel));
+      });
+
+      els.flashcard.addEventListener("click", flipCard);
+      els.flipBtn.addEventListener("click", flipCard);
+      els.nextBtn.addEventListener("click", nextCard);
+      els.prevBtn.addEventListener("click", prevCard);
+      els.shuffleBtn.addEventListener("click", shuffleCards);
+      els.knowBtn.addEventListener("click", () => mark("known"));
+      els.unknownBtn.addEventListener("click", () => mark("unknown"));
+
+      els.wordForm.addEventListener("submit", saveWordFromForm);
+      els.cancelEditBtn.addEventListener("click", resetForm);
+
+      els.searchInput.addEventListener("input", renderWords);
+
+      els.wordList.addEventListener("click", (e) => {
+        const btn = e.target.closest("button[data-action]");
+        if (!btn) return;
+
+        if (btn.dataset.action === "edit") editWord(btn.dataset.id);
+        if (btn.dataset.action === "delete") deleteWord(btn.dataset.id);
+      });
+
+      els.exportBtn.addEventListener("click", exportWords);
+      els.importInput.addEventListener("change", e => importWords(e.target.files[0]));
+      els.deleteAllBtn.addEventListener("click", deleteAllWords);
+
+      els.quizOptions.addEventListener("click", (e) => {
+        const btn = e.target.closest(".option");
+        if (!btn) return;
+        answerQuiz(btn.dataset.id);
+      });
+
+      els.nextQuizBtn.addEventListener("click", nextQuiz);
+
+      els.restartQuizBtn.addEventListener("click", () => {
+        startQuizAgain(false);
+      });
+
+      els.shuffleQuizBtn.addEventListener("click", () => {
+        startQuizAgain(true);
+      });
+
+      els.startAgainBtn.addEventListener("click", () => {
+        startQuizAgain(false);
+      });
+
+      els.shuffleAgainBtn.addEventListener("click", () => {
+        startQuizAgain(true);
+      });
+    }
+
+    function init() {
+      loadData();
+      resetQuiz(true);
+      bindEvents();
+      renderAll();
+    }
+
+    init();
+  </script>
+</body>
+</html>
