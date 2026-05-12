@@ -1138,5 +1138,365 @@
     "front": "집중하다",
     "mongolian": "төвлөрөх",
     "english": "to focus"
+  },
+  {
+    "id": "w_191",
+    "front": "향수병",
+    "mongolian": "нутгаа санах",
+    "english": "homesickness"
+  },
+  {
+    "id": "w_192",
+    "front": "수염",
+    "mongolian": "сахал",
+    "english": "beard / mustache"
+  },
+  {
+    "id": "w_193",
+    "front": "드러내다",
+    "mongolian": "ил гаргах, харуулах",
+    "english": "to reveal / show"
+  },
+  {
+    "id": "w_194",
+    "front": "두렵다",
+    "mongolian": "айх, эмээх",
+    "english": "to be afraid"
+  },
+  {
+    "id": "w_195",
+    "front": "균형",
+    "mongolian": "тэнцвэр, жигд байдал",
+    "english": "balance"
+  },
+  {
+    "id": "w_196",
+    "front": "호기심",
+    "mongolian": "сониуч зан",
+    "english": "curiosity"
+  },
+  {
+    "id": "w_197",
+    "front": "확보하다",
+    "mongolian": "баталгаажуулах, хангаж авах, нөөцлөх",
+    "english": "to secure / obtain"
+  },
+  {
+    "id": "w_198",
+    "front": "마련하다",
+    "mongolian": "бэлтгэх, зохион байгуулах, хангах",
+    "english": "to prepare / arrange"
+  },
+  {
+    "id": "w_199",
+    "front": "반영되다",
+    "mongolian": "ойх, тусгагдах, бодолцож үзэгдэх",
+    "english": "to be reflected"
+  },
+  {
+    "id": "w_200",
+    "front": "수표교",
+    "mongolian": "усны түвшин хэмжих гүүр",
+    "english": "water-level measuring bridge"
+  },
+  {
+    "id": "w_201",
+    "front": "준비하다",
+    "mongolian": "бэлтгэх",
+    "english": "to prepare"
+  },
+  {
+    "id": "w_202",
+    "front": "대처하다",
+    "mongolian": "арга хэмжээ авах",
+    "english": "to cope with / respond to"
+  },
+  {
+    "id": "w_203",
+    "front": "방비하다",
+    "mongolian": "урьдчилан хамгаалах",
+    "english": "to defend against / prepare defenses"
+  },
+  {
+    "id": "w_204",
+    "front": "대응하다",
+    "mongolian": "хариу арга хэмжээ авах",
+    "english": "to respond / counter"
+  },
+  {
+    "id": "w_205",
+    "front": "석유",
+    "mongolian": "газрын тос",
+    "english": "petroleum / oil"
+  },
+  {
+    "id": "w_206",
+    "front": "홍수",
+    "mongolian": "үер",
+    "english": "flood"
+  },
+  {
+    "id": "w_207",
+    "front": "기둥",
+    "mongolian": "багана, тулгуур",
+    "english": "pillar / column"
+  },
+  {
+    "id": "w_208",
+    "front": "수시",
+    "mongolian": "байсгээд, байн байн",
+    "english": "frequently / from time to time"
+  },
+  {
+    "id": "w_209",
+    "front": "일정하게",
+    "mongolian": "тогтсон байдлаар, тогтмол хугацаагаар",
+    "english": "regularly / consistently"
+  },
+  {
+    "id": "w_210",
+    "front": "간격",
+    "mongolian": "зай, хоорондын зай, интервал",
+    "english": "interval / gap"
+  },
+  {
+    "id": "w_211",
+    "front": "표시",
+    "mongolian": "тэмдэглэгээ, илэрхийлэл",
+    "english": "mark / indication"
+  },
+  {
+    "id": "w_212",
+    "front": "대피하다",
+    "mongolian": "дайжих, зугтах",
+    "english": "to evacuate"
+  },
+  {
+    "id": "w_213",
+    "front": "끌어내다",
+    "mongolian": "хүчээр гаргах, гаргаж ирэх",
+    "english": "to pull out / draw out"
+  },
+  {
+    "id": "w_214",
+    "front": "막연하다",
+    "mongolian": "бүдэг, бүрхэг",
+    "english": "vague / unclear"
+  },
+  {
+    "id": "w_215",
+    "front": "구체적",
+    "mongolian": "тодорхой, нарийвчилсан",
+    "english": "specific / concrete"
+  },
+  {
+    "id": "w_216",
+    "front": "추상적",
+    "mongolian": "хийсвэр, тодорхой бус",
+    "english": "abstract"
+  },
+  {
+    "id": "w_217",
+    "front": "추상화",
+    "mongolian": "авангард зураг, хийсвэр зураг",
+    "english": "abstract painting / abstraction"
+  },
+  {
+    "id": "w_218",
+    "front": "관용어",
+    "mongolian": "хэлц үг, тогтсон хэллэг",
+    "english": "idiom"
+  },
+  {
+    "id": "w_219",
+    "front": "발이 넓다",
+    "mongolian": "хүний харилцаа өргөн, таньдаг хүн ихтэй",
+    "english": "to know many people / be well-connected"
+  },
+  {
+    "id": "w_220",
+    "front": "눈을 딱 감다",
+    "mongolian": "нэг удаа нүдээ аниад өнгөрөөх",
+    "english": "to overlook something just once"
+  },
+  {
+    "id": "w_221",
+    "front": "머리를 맞대다",
+    "mongolian": "хамт санал солилцох, зөвлөлдөх",
+    "english": "to put heads together / discuss"
+  },
+  {
+    "id": "w_222",
+    "front": "손이 크다",
+    "mongolian": "мөнгийг сайн зарцуулах, хоол их хийх, өргөн цар хүрээтэй",
+    "english": "to be generous / do things on a large scale"
+  },
+  {
+    "id": "w_223",
+    "front": "눈이 높다",
+    "mongolian": "сонголтын шалгуур өндөр, голомтгой",
+    "english": "to have high standards"
+  },
+  {
+    "id": "w_224",
+    "front": "눈이 낮다",
+    "mongolian": "сонголтын шалгуур амархан, шаардлага бага",
+    "english": "to have low standards"
+  },
+  {
+    "id": "w_225",
+    "front": "손에 땀을 쥐다",
+    "mongolian": "сандарч түгших, догдлох",
+    "english": "to be nervous / tense"
+  },
+  {
+    "id": "w_226",
+    "front": "목에 힘을 주다",
+    "mongolian": "ихэрхэх, бардамнах",
+    "english": "to act arrogant / put on airs"
+  },
+  {
+    "id": "w_227",
+    "front": "폐강",
+    "mongolian": "хичээл цуцлагдах",
+    "english": "course cancellation"
+  },
+  {
+    "id": "w_228",
+    "front": "휴강",
+    "mongolian": "хичээл түр завсарлах, орохгүй байх",
+    "english": "class cancellation / no class"
+  },
+  {
+    "id": "w_229",
+    "front": "개강",
+    "mongolian": "хичээл эхлэх",
+    "english": "start of classes"
+  },
+  {
+    "id": "w_230",
+    "front": "종강",
+    "mongolian": "хичээл дуусах",
+    "english": "end of classes"
+  },
+  {
+    "id": "w_231",
+    "front": "협조",
+    "mongolian": "хамтын тусламж, дэмжлэг",
+    "english": "cooperation"
+  },
+  {
+    "id": "w_232",
+    "front": "폐교",
+    "mongolian": "сургууль хаагдах, хаасан сургууль",
+    "english": "school closure / closed school"
+  },
+  {
+    "id": "w_233",
+    "front": "개교",
+    "mongolian": "сургууль нээгдэх, байгуулагдах",
+    "english": "school opening / founding"
+  },
+  {
+    "id": "w_234",
+    "front": "산골",
+    "mongolian": "уулын гүн хөдөө, алслагдсан уулын нутаг",
+    "english": "remote mountain village"
+  },
+  {
+    "id": "w_235",
+    "front": "위기",
+    "mongolian": "хямрал, аюултай нөхцөл, эгзэгтэй үе",
+    "english": "crisis"
+  },
+  {
+    "id": "w_236",
+    "front": "특성화",
+    "mongolian": "онцлогжуулах, мэргэшүүлэх, төрөлжүүлэх",
+    "english": "specialization"
+  },
+  {
+    "id": "w_237",
+    "front": "기부",
+    "mongolian": "хандив, хандивлах",
+    "english": "donation"
+  },
+  {
+    "id": "w_238",
+    "front": "잔소리",
+    "mongolian": "үглэх, янших, байнга сануулах үг",
+    "english": "nagging"
+  },
+  {
+    "id": "w_239",
+    "front": "운전면허를 따다",
+    "mongolian": "жолооны үнэмлэхтэй болох",
+    "english": "to get a driver's license"
+  },
+  {
+    "id": "w_240",
+    "front": "당분간",
+    "mongolian": "хэсэг хугацаанд, түр хугацаанд",
+    "english": "for the time being"
+  },
+  {
+    "id": "w_241",
+    "front": "사방",
+    "mongolian": "дөрвөн зүг, эргэн тойрон",
+    "english": "all directions / everywhere"
+  },
+  {
+    "id": "w_242",
+    "front": "후들후들",
+    "mongolian": "салганах, чичрэх байдал",
+    "english": "trembling / shaking"
+  },
+  {
+    "id": "w_243",
+    "front": "무사히",
+    "mongolian": "эсэн мэнд, аюулгүйгээр",
+    "english": "safely"
+  },
+  {
+    "id": "w_244",
+    "front": "새삼",
+    "mongolian": "дахин нэг, шинээр мэдрэхэд",
+    "english": "anew / again"
+  },
+  {
+    "id": "w_245",
+    "front": "뿌듯하다",
+    "mongolian": "бахархалтай, сэтгэл дүүрэн байх",
+    "english": "to feel proud / fulfilled"
+  },
+  {
+    "id": "w_246",
+    "front": "모처럼",
+    "mongolian": "нэлээд удсаны дараа, ховорхон тохиолдлоор",
+    "english": "after a long time / rarely"
+  },
+  {
+    "id": "w_247",
+    "front": "비록 + 더라도",
+    "mongolian": "хэдийгээр ... боловч",
+    "english": "even though / although"
+  },
+  {
+    "id": "w_248",
+    "front": "주제",
+    "mongolian": "сэдэв, гол санаа",
+    "english": "topic / main idea"
+  },
+  {
+    "id": "w_249",
+    "front": "중심 생각",
+    "mongolian": "гол санаа",
+    "english": "main idea"
+  },
+  {
+    "id": "w_250",
+    "front": "껑충",
+    "mongolian": "огцом, ихээр, дэвхрэн үсрэх",
+    "english": "suddenly / by a lot / with a leap"
   }
 ]
